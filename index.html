@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3-Home work4-Starwin</title>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <style>
+        .labels {
+            fill: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vis">
+    </div>
+    <script src="script1.js">
+    </script>
+    <button id="color">Change color to green</button>
+    <button id="update">Update data</button>
+    <button id="default">Default data</button>
+    <script> 
+        d3.selectAll('button').on('click', function () {
+            //See which p was clicked
+            var paragraphID = d3.select(this).attr("id");
+
+            //Decide what to do next
+            if (paragraphID == "update") {
+                var data = ([30, 47, 22, 7, 76, 18, 92, 21, 83])
+                update(data);
+            }
+            //Decide what to do next
+            if (paragraphID == "default") {
+                var data = ([10, 27, 22, 17, 67, 18, 9, 54, 91])
+                update(data);
+            }
+
+        });
+    </script>
+    <script>changeColor()</script>
+</body>
+
+</html>
